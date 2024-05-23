@@ -6,21 +6,21 @@ const input = require('readline-sync');
 let candidateName = ""
 
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
-let question = "Who was the first American woman in space?"; 
+let question = "Who was the first American woman in space? "; 
 let correctAnswer = "Sally Ride";
 let candidateAnswer = ""
 
 
 
 //TODO: Variables for Part 2
-let questions = ["Who was the first American woman in space?", "True or flase: 5 kilometer == 500 meters", "(5+3)/2*10 = ?", "Given the array [8,'Orbit','Trajectory', '45'] what entry is at index 2?", "What is the minimum crew size for the ISS?"];
+let questions = ["Who was the first American woman in space? " , "True or flase: 5 kilometer == 500 meters " , "(5+3)/2*10 = ? " , "Given the array [8,'Orbit','Trajectory', '45'] what entry is at index 2? " , "What is the minimum crew size for the ISS? " ];
 let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
 let candidateAnswers = [];
 
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
-  candidateName = input.question("Please enter your name")
+  candidateName = input.question("Please enter your name ")
 
 }
 function askQuestion() {
@@ -28,11 +28,9 @@ function askQuestion() {
 // candidateAnswer = input.question (question)
 
   for (let i = 0; i < questions.length; i++) {
-    let quizQuestion = input.question (questions[i]);
+    let quizAnswer = input.question (questions[i]);
 
-    candidateAnswers.push(quizQuestion)
-
-   
+    candidateAnswers.push(quizAnswer);
 
  };
 }
@@ -40,16 +38,15 @@ function askQuestion() {
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-  if (quizQuestion === correctAnswers[i]) {
-    console.log("Good job! That's correct!")
-
-  } else {
-    console.log("You suck, that's wrong")
-  }
-
-  console.log (`Your answers were ${candidateAnswers}, the correct answers were ${correctAnswers}`)
+  
   for (let i = 0; i < candidateAnswers.length; i++) {
-    let quizQuestion = (candidateAnswers[i])
+    console.log (`Your answer for question ${i+1} was ${candidateAnswers[i]}, the correct answer was ${correctAnswers[i]}`);
+    if (candidateAnswers[i]=== correctAnswers[i]) {
+      console.log("Good job! That's correct!")
+  
+    } else {
+      console.log("You suck, that's wrong")
+    }
   }
 
 
